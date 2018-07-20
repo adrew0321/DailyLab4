@@ -19,40 +19,40 @@ namespace LabNumber4
                 Console.ReadLine();
 
                 bool repeat2 = true;
-                while(repeat2)
+                while (repeat2)
                 {
                     Console.Write($"Enter an integer: ");
 
-                        try
-                        {
-                            userInput = int.Parse(Console.ReadLine());
-                            repeat2 = false;
+                    try
+                    {
+                        userInput = int.Parse(Console.ReadLine());
+                        repeat2 = false;
 
-                                if (userInput < 0)
-                                {
-                                    Console.WriteLine($"You've entered an invalid input. Please use a positive integer");
-                                    repeat2 = true;
-                                    break;
-                                }
-                        }
-                        catch (FormatException)
+                        if (userInput < 0)
                         {
-                            Console.WriteLine($"Invalid Input: Please try again...");
+                            Console.WriteLine($"You've entered an invalid input. Please use a positive integer");
                             repeat2 = true;
+                            break;
                         }
-                        catch (OverflowException)
-                        {
-                            Console.WriteLine($"Invalid input: The integer you've entered is too large or too small. Please try again...");
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine($"Critical Error: {e.Message}");
-                            repeat2 = false;
-                        }
-                
-                    
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine($"Invalid Input: Please try again...");
+                        repeat2 = true;
+                    }
+                    catch (OverflowException)
+                    {
+                        Console.WriteLine($"Invalid input: The integer you've entered is too large or too small. Please try again...");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Critical Error: {e.Message}");
+                        repeat2 = false;
+                    }
 
-                    
+
+
+
                 }
 
                 Console.ReadLine();
